@@ -1,0 +1,1 @@
+The calculated time indicates the total duration required for the secure storage subsystem within the Trusted Execution Environment to read, decrypt, and load the requested data into volatile memory (RAM).
