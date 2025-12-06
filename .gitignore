@@ -1,0 +1,26 @@
+# OP-TEE / Repo internals
+optee_/.repo/
+optee_/build/
+
+# Large binaries
+*.pack
+*.img
+*.bin
+*.elf
+*.so
+
+# Build junk
+build/
+out/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
