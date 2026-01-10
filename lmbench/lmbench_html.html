@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMBench Results Analyzer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f9fafb;
+            color: #1f2937;
+        }
+        .header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #111827;
+        }
+        .subtitle {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+        .export-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .export-btn:hover {
+            background: #1d4ed8;
+        }
+        .tabs {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0 1.5rem;
+        }
+        .tabs-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0.25rem;
+        }
+        .tab {
+            padding: 0.75rem 1rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: #6b7280;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .tab:hover {
+            color: #111827;
+        }
+        .tab.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .info-box {
+            background: #dbeafe;
+            border: 1px solid #93c5fd;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .info-header {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+        .info-title {
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem 2rem;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        .info-grid strong {
+            font-weight: 600;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+        .stat-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .stat-value {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+        .stat-value.green { color: #10b981; }
+        .stat-value.blue { color: #3b82f6; }
+        .stat-value.purple { color: #8b5cf6; }
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .chart-container {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .chart-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .chart-wrapper {
+            position: relative;
+            height: 350px;
+        }
+        .chart-note {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+        @media print {
+            .header, .tabs, .export-btn { display: none; }
+            .chart-wrapper { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div>
+                <h1>LMBench Results Analyzer</h1>
+                <div class="subtitle">dell-Precision-3660 - Ubuntu 24.04.1</div>
+            </div>
+            <button class="export-btn" onclick="window.print()">
+                📥 Export Report
+            </button>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <div class="tabs-content">
+            <button class="tab active" onclick="showTab('overview')">Overview</button>
+            <button class="tab" onclick="showTab('syscalls')">System Calls & IPC</button>
+            <button class="tab" onclick="showTab('cpu')">CPU Operations</button>
+            <button class="tab" onclick="showTab('memory')">Memory</button>
+            <button class="tab" onclick="showTab('network')">Network</button>
+        </div>
+    </div>
+
+    <div class="main">
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <div class="info-box">
+                <div class="info-header">
+                    <span style="font-size: 1.25rem;">ℹ️</span>
+                    <div style="flex: 1;">
+                        <div class="info-title">System Information</div>
+                        <div class="info-grid">
+                            <div><strong>Hostname:</strong> dell-Precision-3660</div>
+                            <div><strong>OS:</strong> Ubuntu 24.04.1</div>
+                            <div><strong>Kernel:</strong> 6.14.0-33-generic</div>
+                            <div><strong>CPU:</strong> 5780 MHz (0.1730 ns clock)</div>
+                            <div><strong>Processors:</strong> 32</div>
+                            <div><strong>Memory:</strong> 8192 MB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-title">Fastest Syscall</div>
+                    <div class="stat-value green">0.056 µs</div>
+                    <div class="stat-label">Simple syscall</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Memory Bandwidth</div>
+                    <div class="stat-value blue">29.9 GB/s</div>
+                    <div class="stat-label">Peak read @ 1MB</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">L1 Cache Latency</div>
+                    <div class="stat-value purple">0.87 ns</div>
+                    <div class="stat-label">Stride 128</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Calls Tab -->
+        <div id="syscalls" class="tab-content">
+            <div class="chart-container">
+                <div class="chart-title">System Call Latencies</div>
+                <div class="chart-wrapper">
+                    <canvas id="syscallChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Process Operations</div>
+                <div class="chart-wrapper">
+                    <canvas id="processChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">IPC Latencies</div>
+                <div class="chart-wrapper">
+                    <canvas id="ipcChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- CPU Tab -->
+        <div id="cpu" class="tab-content">
+            <div class="chart-container">
+                <div class="chart-title">Integer Operations (Lower is Better)</div>
+                <div class="chart-wrapper">
+                    <canvas id="intOpsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Float Operations (Lower is Better)</div>
+                <div class="chart-wrapper">
+                    <canvas id="floatOpsChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Memory Tab -->
+        <div id="memory" class="tab-content">
+            <div class="chart-container">
+                <div class="chart-title">Memory Read/Write Bandwidth</div>
+                <div class="chart-wrapper">
+                    <canvas id="memBandwidthChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Memory Copy Operations</div>
+                <div class="chart-wrapper">
+                    <canvas id="memCopyChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Memory Latency (Cache Hierarchy)</div>
+                <div class="chart-wrapper">
+                    <canvas id="memLatencyChart"></canvas>
+                </div>
+                <div class="chart-note">
+                    <strong>Cache observations:</strong> L1 cache (~0.87ns), L2/L3 transition (~2.8ns), 
+                    Main memory access varies (1-17ns depending on size), showing NUMA effects on this 32-core system.
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Tab -->
+        <div id="network" class="tab-content">
+            <div class="chart-container">
+                <div class="chart-title">Socket Bandwidth (Localhost)</div>
+                <div class="chart-wrapper">
+                    <canvas id="networkChart"></canvas>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-title">AF_UNIX Stream</div>
+                    <div class="stat-value blue">18.3 GB/s</div>
+                    <div class="stat-label">Bandwidth</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Pipe</div>
+                    <div class="stat-value green">4.8 GB/s</div>
+                    <div class="stat-label">Bandwidth</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Chart configurations
+        Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        Chart.defaults.font.size = 12;
+
+        // Syscall Chart
+        new Chart(document.getElementById('syscallChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Syscall', 'Read', 'Write', 'Stat', 'Fstat', 'Open/close', 'Signal', 'Prot fault'],
+                datasets: [{
+                    label: 'Latency (µs)',
+                    data: [0.0556, 0.0881, 0.0749, 0.2713, 0.1064, 0.5643, 0.5884, 0.2872],
+                    backgroundColor: '#3b82f6'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, title: { display: true, text: 'Microseconds (µs)' } } }
+            }
+        });
+
+        // Process Chart
+        new Chart(document.getElementById('processChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Fork+exit', 'Fork+execve', 'Fork+/bin/sh'],
+                datasets: [{
+                    label: 'Latency (µs)',
+                    data: [291.40, 1307.00, 2651.50],
+                    backgroundColor: '#8b5cf6'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, title: { display: true, text: 'Microseconds (µs)' } } }
+            }
+        });
+
+        // IPC Chart
+        new Chart(document.getElementById('ipcChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Pipe', 'AF_UNIX', 'UDP', 'TCP', 'RPC/UDP', 'RPC/TCP', 'TCP conn'],
+                datasets: [{
+                    label: 'Latency (µs)',
+                    data: [2.87, 2.81, 4.31, 5.56, 5.55, 6.88, 7.70],
+                    backgroundColor: '#10b981'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, title: { display: true, text: 'Microseconds (µs)' } } }
+            }
+        });
+
+        // Integer Operations Chart
+        new Chart(document.getElementById('intOpsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Bit', 'Add', 'Mul', 'Div', 'Mod'],
+                datasets: [{
+                    label: 'Latency (ns)',
+                    data: [0.13, 0.00, 0.54, 1.92, 2.96],
+                    backgroundColor: '#f59e0b'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, title: { display: true, text: 'Nanoseconds (ns)' } } }
+            }
+        });
+
+        // Float Operations Chart
+        new Chart(document.getElementById('floatOpsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Add', 'Mul', 'Div'],
+                datasets: [{
+                    label: 'Latency (ns)',
+                    data: [0.35, 0.69, 1.91],
+                    backgroundColor: '#ef4444'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, title: { display: true, text: 'Nanoseconds (ns)' } } }
+            }
+        });
+
+        // Memory Bandwidth Chart
+        new Chart(document.getElementById('memBandwidthChart'), {
+            type: 'line',
+            data: {
+                labels: ['512B', '1KB', '4KB', '64KB', '1MB', '16MB', '128MB', '1GB'],
+                datasets: [
+                    {
+                        label: 'Read',
+                        data: [1751.79, 3304.72, 11269.36, 29412.61, 29947.63, 22052.07, 7763.64, 7785.36],
+                        borderColor: '#3b82f6',
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Write',
+                        data: [44741.90, 45847.59, 43778.40, 40557.40, 38881.81, 32151.46, 10359.50, 9909.02],
+                        borderColor: '#10b981',
+                        tension: 0.3
+                    },
+                    {
+                        label: 'Mmap',
+                        data: [103710.61, 82080.72, 83253.77, 67030.27, 66126.41, 48647.24, 12067.77, 14563.95],
+                        borderColor: '#8b5cf6',
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { y: { beginAtZero: true, title: { display: true, text: 'MB/sec' } } }
+            }
+        });
+
+        // Memory Copy Chart
+        new Chart(document.getElementById('memCopyChart'), {
+            type: 'line',
+            data: {
+                labels: ['512B', '4KB', '64KB', '1MB', '16MB', '128MB'],
+                datasets: [
+                    {
+                        label: 'bcopy',
+                        data: [188094.24, 264482.44, 79480.47, 59874.90, 22725.14, 13470.27],
+                        borderColor: '#f59e0b',
+                        tension: 0.3
+                    },
+                    {
+                        label: 'aligned',
+                        data: [205774.51, 266082.84, 76285.61, 57574.87, 22742.16, 13697.08],
+                        borderColor: '#ef4444',
+                        tension: 0.3
+                    },
+                    {
+                        label: 'bzero',
+                        data: [294851.06, 322042.74, 88474.79, 89822.67, 53773.13, 12121.17],
+                        borderColor: '#06b6d4',
+                        tension: 0.3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { y: { beginAtZero: true, title: { display: true, text: 'MB/sec' } } }
+            }
+        });
+
+        // Memory Latency Chart
+        new Chart(document.getElementById('memLatencyChart'), {
+            type: 'line',
+            data: {
+                labels: ['4KB', '8KB', '32KB', '64KB', '128KB', '256KB', '512KB', '1MB', '2MB', '4MB', '8MB', '16MB', '32MB', '64MB', '128MB', '512MB', '8GB'],
+                datasets: [{
+                    label: 'Latency (ns)',
+                    data: [0.867, 0.867, 0.868, 2.777, 2.781, 2.776, 2.821, 1.056, 1.260, 1.619, 3.401, 1.715, 8.817, 7.996, 17.298, 10.130, 9.944],
+                    borderColor: '#8b5cf6',
+                    tension: 0.3,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { 
+                    y: { 
+                        beginAtZero: true, 
+                        title: { display: true, text: 'Nanoseconds (ns)' }
+                    } 
+                }
+            }
+        });
+
+        // Network Chart
+        new Chart(document.getElementById('networkChart'), {
+            type: 'line',
+            data: {
+                labels: ['1KB', '64KB', '128KB', '1MB', '10MB'],
+                datasets: [{
+                    label: 'Bandwidth (MB/sec)',
+                    data: [6.06, 341.33, 654.80, 4543.59, 10737.61],
+                    borderColor: '#10b981',
+                    tension: 0.3,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { 
+                    y: { 
+                        beginAtZero: true, 
+                        title: { display: true, text: 'MB/sec' }
+                    } 
+                }
+            }
+        });
+    </script>
+</body>
+</html>
