@@ -1,0 +1,455 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 xtest -t benchmark -l 15    # All benchmark cases at max detail\
+Run test suite wD/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+ith level=15\
+\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+TEE testD/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+ application staD/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+rted oveD/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+r defaulD/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+t TEE instance\
+######################################################\
+#\
+# benD/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+chmark\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+#\
+#####################################################D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+#\
+ \
+* benchmark_1001 TEE Trusted Storage Performance Test (WRITE)\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x4008f000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40056000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x4008c000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40038000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40054000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40080000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x4003f000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40076000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+-----------------+------D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+---------+------D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+--------D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+--\
+ Data Size (D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+B) 	 | TD/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+ime (s)	D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+ | Speed (kB/s)	 \
+-----------------+---------------+----------------\
+      256D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+ 	 |    D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+0.153 	 |    1.634\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=025\
+\
+     1024 	 |    0.033 	 |   30.303\
+     2048 	 |    0.061 	 |   32.787\
+     4096 	 |    0.133 	 |   30.075\
+    16384 	 |    0.587 	 |   27.257\
+   524288 	 |   28.164 	 |   18.179\
+  1048576 	 |   60.653 	 |   16.883\
+-----------------+---------------+----------------\
+  benchmark_1001 OK\
+ \
+* benchmark_1002 TEE D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40068000\
+Trusted Storage Performance Test (READ)\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x4004e000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x4003e000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40079000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40087000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40030000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40035000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40070000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+----------------D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+-+--------------D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+-+------D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+----------\
+ DatD/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+a Size (D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+B) 	 | TD/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+ime (s)	 | Speed (kB/s)	 \
+-----------------+---------------+----------------\
+ D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+     256D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+ 	 |    0.001 	 |  250.000\
+      512 	 |    0.001 	 |  D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+500.000\
+     1024 	 |    0.001 	 | 1000.000\
+     2048 	 |    0.002 	 | 1000.000\
+     4096 	 |    0.005 	 |  800.000\
+    16384 	 |    0.020 	 |  800.000\
+   524288 	 |    0.642 	 |  797.508\
+  1048576 	 |    1.280 	 |  800.000\
+-----------------+---------------+----------------\
+  benchmark_1002 OK\
+ \
+* benchmark_1003 TEE D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40047000\
+Trusted Storage Performance Test (REWRITE)\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40087000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40082000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40074000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40036000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x4003d000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x4006f000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+D/LD:  ldelf:134 Loading TS f157cda0-550c-11e5-a6fa-0002a5d5c51b\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (early TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (Secure Storage TA)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF f157cda0-550c-11e5-a6fa-0002a5d5c51b (REE)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (f157cda0-550c-11e5-a6fa-0002a5d5c51b) at 0x40031000\
+D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+-----------------+------D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA 614789f2-39c0-4ebf-b235-92b32ac107ed\
+---------+------D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+--------D/LD:  ldelf:134 Loading TS 614789f2-39c0-4ebf-b235-92b32ac107ed\
+--\
+ Data Size (D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF 614789f2-39c0-4ebf-b235-92b32ac107ed (early TA)\
+B) 	 | TD/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+ime (s)	D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF 614789f2-39c0-4ebf-b235-92b32ac107ed (Secure Storage TA)\
+ | Speed (kB/s)	 \
+-----------------+---------------+----------------\
+      256D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+ 	 |    D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF 614789f2-39c0-4ebf-b235-92b32ac107ed (REE)\
+0.033 	 |    7.576\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=052\
+\
+     1024 	 |    0.205 	 |    4.878\
+     2048 	 |    0.064 	 |   31.250\
+     4096 	 |    0.138 	 |   28.986\
+    16384 	 |    0.613 	 |   26.101\
+   524288 	 |   28.759 	 |   17.803\
+  1048576 	 |   62.023 	 |   16.510\
+-----------------+---------------+----------------\
+  benchmark_1003 OK\
+ \
+* benchmark_2001 TEE SHA PerfD/LD:  ldelf:168 ELF (614789f2-39c0-4ebf-b235-92b32ac107ed) at 0x40070000\
+ormance test (TA_SHA_SHA1)\
+min=227.344us maD/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA 614789f2-39c0-4ebf-b235-92b32ac107ed\
+x=509.584us meanD/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+=248.25uD/LD:  ldelf:134 Loading TS 614789f2-39c0-4ebf-b235-92b32ac107ed\
+s stddev=20.779uD/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF 614789f2-39c0-4ebf-b235-92b32ac107ed (early TA)\
+s (cv 8.D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+37022%) D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF 614789f2-39c0-4ebf-b235-92b32ac107ed (Secure Storage TA)\
+(3.93379MiB/s)\
+  benchmark_2001 OK\
+ \
+* benchmark_2002 TEE SHA Performance tesD/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+t (TA_SHD/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF 614789f2-39c0-4ebf-b235-92b32ac107ed (REE)\
+A_SHA226)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (614789f2-39c0-4ebf-b235-92b32ac107ed) at 0x4003f000\
+min=450.677us maD/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA e626662e-c0e2-485c-b8c8-09fbce6edf3d\
+x=780.729us meanD/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+=493.511D/LD:  ldelf:134 Loading TS e626662e-c0e2-485c-b8c8-09fbce6edf3d\
+us stddev=17.905D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF e626662e-c0e2-485c-b8c8-09fbce6edf3d (early TA)\
+6us (cv D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+3.6282%)D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF e626662e-c0e2-485c-b8c8-09fbce6edf3d (Secure Storage TA)\
+ (7.91522MiB/s)\
+  benchmark_2002 OK\
+ \
+* benchmark_2011 TEE AES Performance teD/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+st (TA_AD/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF e626662e-c0e2-485c-b8c8-09fbce6edf3d (REE)\
+ES_ECB)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (e626662e-c0e2-485c-b8c8-09fbce6edf3d) at 0x4008e000\
+min=270us max=54D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA e626662e-c0e2-485c-b8c8-09fbce6edf3d\
+0.886us mean=294D/TC:? 0 ldelf_load_ldelf:96 ldelf load address 0x40006000\
+.424us sD/LD:  ldelf:134 Loading TS e626662e-c0e2-485c-b8c8-09fbce6edf3d\
+tddev=24.7418us D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF e626662e-c0e2-485c-b8c8-09fbce6edf3d (early TA)\
+(cv 8.40D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+345%) (3D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF e626662e-c0e2-485c-b8c8-09fbce6edf3d (Secure Storage TA)\
+.31686MiB/s)\
+  benchmark_2011 OK\
+ \
+* benchmark_2012 TEE AES Performance test D/TC:? 0 ldelf_syscall_open_bin:146 res=0xffff0008\
+(TA_AES_D/TC:? 0 ldelf_syscall_open_bin:142 Lookup user TA ELF e626662e-c0e2-485c-b8c8-09fbce6edf3d (REE)\
+CBC)\
+D/TC:? 0 ldelf_syscall_open_bin:146 res=0\
+D/LD:  ldelf:168 ELF (e626662e-c0e2-485c-b8c8-09fbce6edf3d) at 0x4004c000\
+min=324.688us max=603.49us mean=359.577us stddev=20.9036D/TC:? 0 tee_ta_close_session:510 csess 0x10186170 id 4\
+us (cv 5D/TC:? 0 tee_ta_close_session:529 Destroy session\
+.81338%)D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10186110)\
+ (2.7158D/TC:? 0 tee_ta_close_session:510 csess 0x10187880 id 3\
+D/TC:? 0 tee_ta_close_session:529 Destroy session\
+\
+  benchD/TC:? 0 destroy_context:307 Destroy TA ctx (0x10187820)\
+mark_201D/TC:? 0 tee_ta_close_session:510 csess 0x10188b10 id 2\
+2 OK\
++-D/TC:? 0 tee_ta_close_session:529 Destroy session\
+--------D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10188ab0)\
+--------D/TC:? 0 tee_ta_close_session:510 csess 0x10189f30 id 1\
+--------D/TC:? 0 tee_ta_close_session:529 Destroy session\
+--------D/TC:? 0 destroy_context:307 Destroy TA ctx (0x10189ed0)\
+--------------------\
+Result of testsuite benchmark:\
+benchmark_1001 OK\
+benchmark_1002 OK\
+benchmark_1003 OK\
+benchmark_2001 OK\
+benchmark_2002 OK\
+benchmark_2011 OK\
+benchmark_2012 OK\
++-----------------------------------------------------\
+24 subtests of which 0 failed\
+7 test cases of which 0 failed\
+0 test cases were skipped\
+TEE test application done!}
