@@ -1,1 +1,1 @@
-package==version --hash=sha256:<digest>
+flask==2.3.3 --hash=sha256:deadbeef
