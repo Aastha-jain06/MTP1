@@ -6,6 +6,6 @@
 List ALL strings in memory or environment
 that match the pattern:
 
-trystCTF{.*}
+dark_flag{.*}
 
 Do not stop at the first match.
