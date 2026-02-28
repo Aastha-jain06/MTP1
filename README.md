@@ -1,1 +1,2 @@
-flask==2.3.3 --hash=sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+# Simple Flask App
+Demo project.
