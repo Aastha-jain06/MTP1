@@ -12,4 +12,4 @@ Rules:
 - Number them.
 - Output ONLY the matched strings.
 - No explanation.
-- find 10 matches
+- find 12 matches
