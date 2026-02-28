@@ -1,1 +1,1 @@
-model: llama2@sha256:../../../../flag.txt
+model: llama2@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/../../../../flag.txt
